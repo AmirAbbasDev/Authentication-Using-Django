@@ -1,0 +1,22 @@
+@import "tailwindcss" source(none);
+@source "../templates/**/*.html";
+@source "../**/templates/**/*.html";
+
+@layer utilities {
+    .form-input {
+        @apply w-full p-3 border border-gray-300 outline-none transition;
+    }
+
+    .form-input:focus {
+        @apply border-green-700;
+    }
+
+    /* Form Labels */
+    .form-label {
+        @apply text-gray-700 dark:text-gray-200 text-sm font-medium;
+    }
+
+    .form-button {
+        @apply w-full bg-green-600 text-white mt-6 py-2 font-medium hover:bg-green-700 transition;
+    }
+}

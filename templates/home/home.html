@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock title %}
+{% block header %}
+{% endblock header %}
+{% block content %}
+    <section class="min-h-[100vh] w-full bg-gray-100 flex flex-col justify-center items-center">
+        <h1 class="text-6xl font-bold text-green-600">Welcome to home screen</h1>
+        {% if request.user.is_authenticated %}
+            <p class="text-amber-500 text-4xl font-medium">Mr. {{ request.user.username }}</p>
+            <a href="{% url 'logout' %}"
+               class="text-white bg-red-500 hover:bg-red-600 py-4 px-12 transition-all duration-500">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}"
+               class="text-white bg-green-600 hover:bg-green-700 py-4 px-12 transition-all duration-500">Login</a>
+        {% endif %}
+    </section>
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}
